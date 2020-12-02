@@ -26,9 +26,7 @@ static int validPassword_old(Password *p) {
 static int validPassword_new(Password *p) {
     if (p->max > strlen(p->password))
         abort();
-    char first = p->password[p->min - 1];
-    char second = p->password[p->max - 1];
-    return p->ch == first ^ p->ch == second;
+    return p->ch == p->password[p->min - 1] ^ p->ch == p->password[p->max - 1];
 }
 
 void readInput(Password **passwords, int *passwordsCount) {
