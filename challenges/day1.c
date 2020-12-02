@@ -8,7 +8,7 @@
 #include "day1.h"
 
 void expenses1() {
-    FILE *input = fopen("../challenges/expenses.txt", "r");
+    FILE *input = fopen("../challenges/expenses_day1.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);
@@ -37,7 +37,7 @@ void expenses1() {
 }
 
 void expenses2() {
-    FILE *input = fopen("../challenges/expenses.txt", "r");
+    FILE *input = fopen("../challenges/expenses_day1.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);
