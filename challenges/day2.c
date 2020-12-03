@@ -29,7 +29,7 @@ static int validPassword_new(Password *p) {
     return p->ch == p->password[p->min - 1] ^ p->ch == p->password[p->max - 1];
 }
 
-void readInput(Password **passwords, int *passwordsCount) {
+static void readInput(Password **passwords, int *passwordsCount) {
     FILE *input = fopen("../challenges/passwords_day2.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
