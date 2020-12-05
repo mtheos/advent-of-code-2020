@@ -8,26 +8,23 @@
 #include <stdlib.h>
 #include "day5.h"
 
-static int getRow(const char *boardingPass) {
-    int start = 0, end = 127;
-    for (int i = 0; i < 7; i++)
-        if (boardingPass[i] == 'F')
+static int binarySearch(const char *boardingPass, int start, int end, int iter, char low, char high) {
+    for (int i = 0; i < iter; i++)
+        if (boardingPass[i] == low)
             end = start + (end - start) / 2;
-        else //if (boardingPass[i] == 'B')
+        else if (boardingPass[i] == high)
             start = start + (end - start) / 2 + 1;
+        else abort();
     assert(start == end);
     return start;
 }
 
+static int getRow(const char *boardingPass) {
+    return binarySearch(boardingPass, 0, 127, 7, 'F', 'B');
+}
+
 static int getSeat(const char *boardingPass) {
-    int start = 0, end = 7;
-    for (int i = 0; i < 3; i++)
-        if (boardingPass[i] == 'L')
-            end = start + (end - start) / 2;
-        else //if (boardingPass[i] == 'R')
-            start = start + (end - start) / 2 + 1;
-    assert(start == end);
-    return start;
+    return binarySearch(boardingPass, 0, 7, 3, 'L', 'R');
 }
 
 static int getMaxSeatId(char **boardingPasses, int boardingPassesCount) {
