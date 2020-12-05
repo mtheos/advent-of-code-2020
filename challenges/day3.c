@@ -21,7 +21,7 @@ static int traverse(char **trail, int trailLength, int moveX, int moveY) {
 }
 
 static void readInput(char ***trail, int *trailLength) {
-    FILE *input = fopen("../challenges/trees_day3.txt", "r");
+    FILE *input = fopen("../challenges/day3_trees.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

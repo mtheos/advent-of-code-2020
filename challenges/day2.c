@@ -30,7 +30,7 @@ static int validPassword_new(Password *p) {
 }
 
 static void readInput(Password **passwords, int *passwordsCount) {
-    FILE *input = fopen("../challenges/passwords_day2.txt", "r");
+    FILE *input = fopen("../challenges/day2_passwords.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

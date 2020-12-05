@@ -19,7 +19,7 @@ typedef struct passport {
 } Passport;
 
 static void readInput(Passport **passports, int *passportCount) {
-    FILE *input = fopen("../challenges/passports_day4.txt", "r");
+    FILE *input = fopen("../challenges/day4_passports.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);
