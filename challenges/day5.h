@@ -8,4 +8,4 @@
 void boarding1();
 void boarding2();
 
-#endif //ADVENT_OF_CODE_2020_DAY5_H
+#endif //DAY5_H

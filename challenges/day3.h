@@ -8,4 +8,4 @@
 void trees1();
 void trees2();
 
-#endif //ADVENT_OF_CODE_2020_DAY3_H
+#endif //DAY3_H

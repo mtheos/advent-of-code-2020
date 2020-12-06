@@ -8,4 +8,4 @@
 void expenses1();
 void expenses2();
 
-#endif //ADVENT_OF_CODE_2020_DAY1_H
+#endif //DAY1_H

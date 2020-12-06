@@ -8,4 +8,4 @@
 void passports1();
 void passports2();
 
-#endif //ADVENT_OF_CODE_2020_DAY4_H
+#endif //DAY4_H
