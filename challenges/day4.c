@@ -36,7 +36,7 @@ static void readInput(Passport **passports, int *passportCount) {
             while (1) {
                 char *key = strtok(token, ":");
                 token = NULL;
-                char *value = strtok(NULL, " \r");
+                char *value = strtok(NULL, " \n");
                 if (value == NULL)
                     break;
                 if (strcmp(key, "byr") == 0) {
@@ -58,8 +58,9 @@ static void readInput(Passport **passports, int *passportCount) {
                 }
                 else { abort(); }
             }
-        } while (getline(&buf, &bufSize, input) != -1 && buf[0] != '\r');
+        } while (getline(&buf, &bufSize, input) != -1 && buf[0] != '\n');
     }
+    fclose(input);
     free(buf);
 }
 
@@ -117,7 +118,7 @@ void passports1() {
     int passportCount = 0;
     readInput(&passports, &passportCount);
     int valid = 0;
-    for (int i = 0; i < passportCount; i++) {
+    for (int i = 0; i < passportCount; ++i) {
         Passport *p = &passports[i];
         if (isValid(p, 0))
             ++valid;
@@ -131,7 +132,7 @@ void passports2() {
     int passportCount = 0;
     readInput(&passports, &passportCount);
     int valid = 0;
-    for (int i = 0; i < passportCount; i++) {
+    for (int i = 0; i < passportCount; ++i) {
         Passport *p = &passports[i];
         if (isValid(p, 1))
             ++valid;

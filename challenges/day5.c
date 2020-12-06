@@ -9,7 +9,7 @@
 #include "day5.h"
 
 static int binarySearch(const char *boardingPass, int start, int end, int iter, char low, char high) {
-    for (int i = 0; i < iter; i++)
+    for (int i = 0; i < iter; ++i)
         if (boardingPass[i] == low)
             end = start + (end - start) / 2;
         else if (boardingPass[i] == high)
@@ -29,7 +29,7 @@ static int getSeat(const char *boardingPass) {
 
 static int getMaxSeatId(char **boardingPasses, int boardingPassesCount) {
     int max = -1;
-    for (int i = 0; i < boardingPassesCount; i++) {
+    for (int i = 0; i < boardingPassesCount; ++i) {
         int id = getRow(boardingPasses[i]) * 8 + getSeat(boardingPasses[i] + 7);
         max = id > max ? id : max;
     }
@@ -38,7 +38,7 @@ static int getMaxSeatId(char **boardingPasses, int boardingPassesCount) {
 
 static int getMissingSeat(char **boardingPasses, int boardingPassesCount) {
     int ids[871] = { 0 }; // from max seat id
-    for (int i = 0; i < boardingPassesCount; i++) {
+    for (int i = 0; i < boardingPassesCount; ++i) {
         int id = getRow(boardingPasses[i]) * 8 + getSeat(boardingPasses[i] + 7);
         ids[id] = 1;
     }
@@ -63,6 +63,7 @@ static void readInput(char ***trail, int *trailLength) {
         (*trail)[*trailLength - 1] = line;
         sscanf(buf, "%s", line);
     }
+    fclose(input);
     free(buf);
 }
 
@@ -71,7 +72,7 @@ void boarding1() {
     int boardingPassesCount = 0;
     readInput(&boardingPasses, &boardingPassesCount);
     printf("Answer: %d\n", getMaxSeatId(boardingPasses, boardingPassesCount));
-    for (int i = 0; i < boardingPassesCount; i++)
+    for (int i = 0; i < boardingPassesCount; ++i)
         free(boardingPasses[i]);
     free(boardingPasses);
 }
@@ -81,7 +82,7 @@ void boarding2() {
     int boardingPassesCount = 0;
     readInput(&boardingPasses, &boardingPassesCount);
     printf("Answer: %d\n", getMissingSeat(boardingPasses, boardingPassesCount));
-    for (int i = 0; i < boardingPassesCount; i++)
+    for (int i = 0; i < boardingPassesCount; ++i)
         free(boardingPasses[i]);
     free(boardingPasses);
 }

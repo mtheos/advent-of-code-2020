@@ -42,6 +42,7 @@ static void readInput(Password **passwords, int *passwordsCount) {
         Password *p = &(*passwords)[*passwordsCount - 1];
         sscanf(buf, "%d-%d %c: %30s", &p->min, &p->max, &p->ch, (char *)&p->password);
     }
+    fclose(input);
     free(buf);
 }
 
@@ -50,7 +51,7 @@ void passwords1() {
     int passwordsCount = 0;
     readInput(&passwords, &passwordsCount);
     int valid = 0;
-    for (int i = 0; i < passwordsCount; i++)
+    for (int i = 0; i < passwordsCount; ++i)
         if (validPassword_old(&passwords[i]))
             ++valid;
     free(passwords);
@@ -62,7 +63,7 @@ void passwords2() {
     int passwordsCount = 0;
     readInput(&passwords, &passwordsCount);
     int valid = 0;
-    for (int i = 0; i < passwordsCount; i++)
+    for (int i = 0; i < passwordsCount; ++i)
         if (validPassword_new(&passwords[i]))
             ++valid;
     free(passwords);

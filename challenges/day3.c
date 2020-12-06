@@ -34,6 +34,7 @@ static void readInput(char ***trail, int *trailLength) {
         (*trail)[*trailLength - 1] = line;
         sscanf(buf, "%s", line);
     }
+    fclose(input);
     free(buf);
 }
 
@@ -43,7 +44,7 @@ void trees1() {
     readInput(&trail, &trailLength);
     int ex = 3, oh = 1;
     printf("Answer (%d, %d): %d\n", ex, oh, traverse(trail, trailLength, ex, oh));
-    for (int i = 0; i < trailLength; i++)
+    for (int i = 0; i < trailLength; ++i)
         free(trail[i]);
     free(trail);
 }
@@ -55,13 +56,13 @@ void trees2() {
     int exs[] = { 1, 3, 5, 7, 1 };
     int ohs[] = { 1, 1, 1, 1, 2 };
     long ans = 1;
-    for (int i = 0; i < sizeof(exs) / sizeof(exs[0]); i++) {
+    for (int i = 0; i < sizeof(exs) / sizeof(exs[0]); ++i) {
         int result = traverse(trail, trailLength, exs[i], ohs[i]);
         ans *= result;
         printf("(%d, %d): %d\n", exs[i], ohs[i], result);
     }
     printf("Answer: %ld\n", ans);
-    for (int i = 0; i < trailLength; i++)
+    for (int i = 0; i < trailLength; ++i)
         free(trail[i]);
     free(trail);
 }

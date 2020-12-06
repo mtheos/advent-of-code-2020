@@ -21,10 +21,11 @@ void expenses1() {
         expenses = realloc(expenses, ++expenseCount * sizeof(int));
         expenses[expenseCount - 1] = atoi(buf);
     }
+    fclose(input);
     free(buf);
     int seen[2020];
     bzero(seen, sizeof(seen));
-    for (int i = 0; i < expenseCount; i++) {
+    for (int i = 0; i < expenseCount; ++i) {
         int x = expenses[i];
         int y = 2020 - x;
         if (seen[y] == 1) {
@@ -50,13 +51,14 @@ void expenses2() {
         expenses = realloc(expenses, ++expenseCount * sizeof(int));
         expenses[expenseCount - 1] = atoi(buf);
     }
+    fclose(input);
     free(buf);
     int seen[2020];
     int found = 0;
     bzero(seen, sizeof(seen));
-    for (int i = 0; i < expenseCount - 1; i++) {
+    for (int i = 0; i < expenseCount - 1; ++i) {
         int x = expenses[i];
-        for (int j = i + 1; j < expenseCount; j++) {
+        for (int j = i + 1; j < expenseCount; ++j) {
             int y = expenses[j];
             int z = 2020 - x - y;
             if (z < 0) continue;
