@@ -5,6 +5,7 @@
 #include "challenges/day4.h"
 #include "challenges/day5.h"
 #include "challenges/day6.h"
+#include "challenges/day7.h"
 
 int main() {
     printf("expenses1:\n");
@@ -37,5 +38,9 @@ int main() {
     printf("customs2:\n");
     customs2();
 
+    printf("\nluggage1:\n");
+    luggage1();
+    printf("luggage2:\n");
+    luggage2();
     return 0;
 }
