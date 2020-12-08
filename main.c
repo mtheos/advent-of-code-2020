@@ -6,6 +6,7 @@
 #include "challenges/day5.h"
 #include "challenges/day6.h"
 #include "challenges/day7.h"
+#include "challenges/day8.h"
 
 int main() {
     printf("expenses1:\n");
@@ -42,5 +43,11 @@ int main() {
     luggage1();
     printf("luggage2:\n");
     luggage2();
+
+    printf("\nbootCode1:\n");
+    bootCode1();
+    printf("bootCode2:\n");
+    bootCode2();
+
     return 0;
 }
