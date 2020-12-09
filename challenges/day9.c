@@ -8,6 +8,8 @@
 #include <limits.h>
 #include "day9.h"
 
+#define WINDOW_LENGTH 25
+
 static void readInput(int **stream, int *streamLength) {
     FILE *input = fopen("../challenges/day9_encoding.txt", "r");
     if (input == NULL) {
@@ -23,26 +25,6 @@ static void readInput(int **stream, int *streamLength) {
     }
     fclose(input);
     free(buf);
-}
-
-static int xmas(const int *window, const int target) {
-    for (int i = 0; i < 25; ++i) {
-        for (int j = i; j < 25; ++j) {
-            int x = window[i];
-            int y = window[j];
-            if (x + y == target)
-                return 1;
-        }
-    }
-    return 0;
-}
-
-static int validateStream(int *stream, int streamLength, int window) {
-    int i = window - 1;
-    while (++i < streamLength)
-        if (!xmas(&stream[i - 25], stream[i]))
-            return i;
-    return -1;
 }
 
 static int min(int *start, const int *end) {
@@ -63,25 +45,32 @@ static int max(int *start, const int *end) {
     return max;
 }
 
-static int check(int *start, const int *end) {
-    int sum = 0;
-    start = start - 1;
-    while (++start < end)
-            sum += *start;
-    return sum;
+static int xmas(const int *window, const int target) {
+    for (int i = 0; i < WINDOW_LENGTH; ++i)
+        for (int j = i; j < WINDOW_LENGTH; ++j)
+            if (window[i] + window[j] == target)
+                return 1;
+    return 0;
+}
+
+static int validateStream(int *stream, int streamLength, int window) {
+    int i = window - 1;
+    while (++i < streamLength)
+        if (!xmas(&stream[i - WINDOW_LENGTH], stream[i]))
+            return i;
+    return -1;
 }
 
 static int breakXmas(int *stream, int streamLength, int target) {
     long sum = 0;
-    int first = -1, last = -1;
-    while (last < streamLength) {
+    int first = 0, last = 0;
+    while (last < streamLength)
         if (sum < target)
-            sum += stream[++last];
+            sum += stream[last++];
         else if (sum > target)
-            sum -= stream[++first];
+            sum -= stream[first++];
         else
-            return min(&stream[first - 1], &stream[last]) + max(&stream[first - 1], &stream[last]);
-    }
+            return min(&stream[first], &stream[last]) + max(&stream[first], &stream[last]);
     return -1;
 }
 
@@ -89,7 +78,7 @@ void encoding1() {
     int *stream = NULL;
     int streamLength = 0;
     readInput(&stream, &streamLength);
-    printf("Answer: %d\n", stream[validateStream(stream, streamLength, 25)]);
+    printf("Answer: %d\n", stream[validateStream(stream, streamLength, WINDOW_LENGTH)]);
     free(stream);
 }
 
@@ -97,6 +86,6 @@ void encoding2() {
     int *stream = NULL;
     int streamLength = 0;
     readInput(&stream, &streamLength);
-    printf("Answer: %d\n", breakXmas(stream, streamLength, stream[validateStream(stream, streamLength, 25)]));
+    printf("Answer: %d\n", breakXmas(stream, streamLength, stream[validateStream(stream, streamLength, WINDOW_LENGTH)]));
     free(stream);
 }
