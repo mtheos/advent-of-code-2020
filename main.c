@@ -54,6 +54,6 @@ int main() {
     encoding1();
     printf("encoding2:\n");
     encoding2();
-
+//
     return 0;
 }
