@@ -12,4 +12,5 @@ add_executable(Advent_of_Code_2020 main.c
         challenges/day06.c challenges/day06.h
         challenges/day07.c challenges/day07.h
         challenges/day08.c challenges/day08.h
-        challenges/day09.c challenges/day09.h)
+        challenges/day09.c challenges/day09.h
+        challenges/day10.c challenges/day10.h)

@@ -8,6 +8,7 @@
 #include "challenges/day07.h"
 #include "challenges/day08.h"
 #include "challenges/day09.h"
+#include "challenges/day10.h"
 
 int main() {
     printf("expenses1:\n");
@@ -54,6 +55,11 @@ int main() {
     encoding1();
     printf("encoding2:\n");
     encoding2();
+
+    printf("\njolting1:\n");
+    jolting1();
+    printf("jolting2:\n");
+    jolting2();
 
     return 0;
 }
