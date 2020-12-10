@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "day7.h"
+#include "day07.h"
 
 #define MAX_BAG_NAME 30
 #define MAX_BAGS_CONTAINED 5
@@ -34,7 +34,7 @@ static char *strtok_str(char *str, const char *delimStr) {
 }
 
 static void readInput(Bag **bags, int *bagsCount) {
-    FILE *input = fopen("../challenges/day7_luggage.txt", "r");
+    FILE *input = fopen("../challenges/day07_luggage.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

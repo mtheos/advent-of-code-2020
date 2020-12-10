@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "day4.h"
+#include "day04.h"
 
 typedef struct passport {
     int byr;
@@ -19,7 +19,7 @@ typedef struct passport {
 } Passport;
 
 static void readInput(Passport **passports, int *passportCount) {
-    FILE *input = fopen("../challenges/day4_passports.txt", "r");
+    FILE *input = fopen("../challenges/day04_passports.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

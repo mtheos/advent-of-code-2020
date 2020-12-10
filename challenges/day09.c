@@ -6,12 +6,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "day9.h"
+#include "day09.h"
 
 #define WINDOW_LENGTH 25
 
 static void readInput(int **stream, int *streamLength) {
-    FILE *input = fopen("../challenges/day9_encoding.txt", "r");
+    FILE *input = fopen("../challenges/day09_encoding.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

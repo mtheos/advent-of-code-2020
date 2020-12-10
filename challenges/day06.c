@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "day6.h"
+#include "day06.h"
 
 typedef struct customsForm {
     int people;
@@ -13,7 +13,7 @@ typedef struct customsForm {
 } CustomsForm;
 
 static void readInput(CustomsForm **customsForms, int *customsFormsCount) {
-    FILE *input = fopen("../challenges/day6_customs.txt", "r");
+    FILE *input = fopen("../challenges/day06_customs.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

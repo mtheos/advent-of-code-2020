@@ -6,7 +6,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>
-#include "day5.h"
+#include "day05.h"
 
 static int binarySearch(const char *boardingPass, int start, int end, int iter, char low, char high) {
     for (int i = 0; i < iter; ++i)
@@ -50,7 +50,7 @@ static int getMissingSeat(char **boardingPasses, int boardingPassesCount) {
 }
 
 static void readInput(char ***trail, int *trailLength) {
-    FILE *input = fopen("../challenges/day5_boarding.txt", "r");
+    FILE *input = fopen("../challenges/day05_boarding.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include "challenges/day1.h"
-#include "challenges/day2.h"
-#include "challenges/day3.h"
-#include "challenges/day4.h"
-#include "challenges/day5.h"
-#include "challenges/day6.h"
-#include "challenges/day7.h"
-#include "challenges/day8.h"
-#include "challenges/day9.h"
+#include "challenges/day01.h"
+#include "challenges/day02.h"
+#include "challenges/day03.h"
+#include "challenges/day04.h"
+#include "challenges/day05.h"
+#include "challenges/day06.h"
+#include "challenges/day07.h"
+#include "challenges/day08.h"
+#include "challenges/day09.h"
 
 int main() {
     printf("expenses1:\n");

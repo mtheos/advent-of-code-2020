@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "day2.h"
+#include "day02.h"
 
 typedef struct password {
     int min;
@@ -30,7 +30,7 @@ static int validPassword_new(Password *p) {
 }
 
 static void readInput(Password **passwords, int *passwordsCount) {
-    FILE *input = fopen("../challenges/day2_passwords.txt", "r");
+    FILE *input = fopen("../challenges/day02_passwords.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

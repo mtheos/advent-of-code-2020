@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "day3.h"
+#include "day03.h"
 
 static int traverse(char **trail, int trailLength, int moveX, int moveY) {
     int hit = 0, xPos = 0, yPos = 0, width = (int)strlen(trail[0]);
@@ -21,7 +21,7 @@ static int traverse(char **trail, int trailLength, int moveX, int moveY) {
 }
 
 static void readInput(char ***trail, int *trailLength) {
-    FILE *input = fopen("../challenges/day3_trees.txt", "r");
+    FILE *input = fopen("../challenges/day03_trees.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

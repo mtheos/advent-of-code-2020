@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "day1.h"
+#include "day01.h"
 
 void expenses1() {
-    FILE *input = fopen("../challenges/day1_expenses.txt", "r");
+    FILE *input = fopen("../challenges/day01_expenses.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);
@@ -38,7 +38,7 @@ void expenses1() {
 }
 
 void expenses2() {
-    FILE *input = fopen("../challenges/day1_expenses.txt", "r");
+    FILE *input = fopen("../challenges/day01_expenses.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);

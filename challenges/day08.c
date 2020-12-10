@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "day8.h"
+#include "day08.h"
 
 typedef enum {
     ACC,
@@ -34,7 +34,7 @@ typedef struct instruction {
 } Instruction;
 
 static void readInput(Instruction **instructions, int *instructionCount) {
-    FILE *input = fopen("../challenges/day8_boot_code.txt", "r");
+    FILE *input = fopen("../challenges/day08_boot_code.txt", "r");
     if (input == NULL) {
         perror("Could not open file");
         exit(1);
