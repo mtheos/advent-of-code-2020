@@ -19,6 +19,27 @@ typedef struct seat {
     SeatState currState;
 } Seat;
 
+static void readInput(Seat ***seatingRows, int *rowCount, int *seatsPerRow) {
+    FILE *input = fopen("../challenges/day11_seating.txt", "r");
+    if (input == NULL) {
+        perror("Could not open file");
+        exit(1);
+    }
+    size_t bufSize = 0;
+    char *buf = NULL;
+    while (getline(&buf, &bufSize, input) != -1) {
+        if (*seatsPerRow == 0)
+            *seatsPerRow = (int)strlen(buf) - 1;
+        *seatingRows = realloc(*seatingRows, ++*rowCount * sizeof(Seat *));
+        (*seatingRows)[*rowCount - 1] = malloc(sizeof(Seat) * *seatsPerRow);
+        bzero((*seatingRows)[*rowCount - 1], sizeof(Seat) * *seatsPerRow);
+        for (int i = 0; i < *seatsPerRow; ++i)
+            (*seatingRows)[*rowCount - 1][i].currState = buf[i] == 'L' ? EMPTY : FLOOR;
+    }
+    fclose(input);
+    free(buf);
+}
+
 static int stateTransition_simplex(Seat **seatingRows, int y, int x, int rowCount, int seatsPerRow) {
     if (seatingRows[y][x].currState == FLOOR)
         return 0;
@@ -95,27 +116,6 @@ static int isThisTheGameOfLife(Seat **seatingRows, int rowCount, int seatsPerRow
         updateState(seatingRows, rowCount, seatsPerRow);
     } while (changed);
     return occupied;
-}
-
-static void readInput(Seat ***seatingRows, int *rowCount, int *seatsPerRow) {
-    FILE *input = fopen("../challenges/day11_seating.txt", "r");
-    if (input == NULL) {
-        perror("Could not open file");
-        exit(1);
-    }
-    size_t bufSize = 0;
-    char *buf = NULL;
-    while (getline(&buf, &bufSize, input) != -1) {
-        if (*seatsPerRow == 0)
-            *seatsPerRow = (int)strlen(buf) - 1;
-        *seatingRows = realloc(*seatingRows, ++*rowCount * sizeof(Seat *));
-        (*seatingRows)[*rowCount - 1] = malloc(sizeof(Seat) * *seatsPerRow);
-        bzero((*seatingRows)[*rowCount - 1], sizeof(Seat) * *seatsPerRow);
-        for (int i = 0; i < *seatsPerRow; ++i)
-            (*seatingRows)[*rowCount - 1][i].currState = buf[i] == 'L' ? EMPTY : FLOOR;
-    }
-    fclose(input);
-    free(buf);
 }
 
 void seating1() {
