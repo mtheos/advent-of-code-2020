@@ -11,6 +11,7 @@
 #include "challenges/day10.h"
 #include "challenges/day11.h"
 #include "challenges/day12.h"
+#include "challenges/day13.h"
 
 int main() {
     printf("expenses1:\n");
@@ -72,6 +73,11 @@ int main() {
     evasion1();
     printf("evasion2:\n");
     evasion2();
+
+    printf("\nshuttleBus1:\n");
+    shuttleBus1();
+    printf("shuttleBus2:\n");
+    shuttleBus2();
 
     return 0;
 }
