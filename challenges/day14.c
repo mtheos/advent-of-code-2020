@@ -111,8 +111,8 @@ static Memory *updateMemoryV2(Memory *memory, int *memoryLength, ulong address, 
             ++shift;
             if (*maskPtr != 'X')
                 continue;
-            if ((address & 1 << shift) == 0) {
-                address |= 1 << shift;
+            if ((address & 1UL << shift) == 0) {
+                address |= 1UL << shift;
                 break;
             }
             address &= ~(1UL << shift);
