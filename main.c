@@ -13,6 +13,7 @@
 #include "challenges/day12.h"
 #include "challenges/day13.h"
 #include "challenges/day14.h"
+#include "challenges/day15.h"
 
 int main() {
     printf("expenses1:\n");
@@ -83,7 +84,12 @@ int main() {
     printf("\ndocking1:\n");
     docking1();
     printf("docking2:\n");
-    docking2();
+    docking2(); // slow
+
+    printf("\nrecitation1:\n");
+    recitation1();
+    printf("recitation2:\n");
+    recitation2(); // lil slow
 
     return 0;
 }

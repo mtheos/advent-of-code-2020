@@ -3,6 +3,9 @@ project(Advent_of_Code_2020 C)
 
 set(CMAKE_C_STANDARD 99)
 
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address -g -O3")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+
 add_executable(Advent_of_Code_2020 main.c
         challenges/day01.c challenges/day01.h
         challenges/day02.c challenges/day02.h
@@ -17,4 +20,5 @@ add_executable(Advent_of_Code_2020 main.c
         challenges/day11.c challenges/day11.h
         challenges/day12.c challenges/day12.h
         challenges/day13.c challenges/day13.h
-        challenges/day14.c challenges/day14.h)
+        challenges/day14.c challenges/day14.h
+        challenges/day15.c challenges/day15.h)
