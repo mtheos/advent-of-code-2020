@@ -37,7 +37,7 @@ static int getMaxSeatId(char **boardingPasses, int boardingPassesCount) {
 }
 
 static int getMissingSeat(char **boardingPasses, int boardingPassesCount) {
-    int ids[871] = { 0 }; // from max seat id
+    int ids[872] = { 0 }; // from max seat id
     for (int i = 0; i < boardingPassesCount; ++i) {
         int id = getRow(boardingPasses[i]) * 8 + getSeat(boardingPasses[i] + 7);
         ids[id] = 1;
