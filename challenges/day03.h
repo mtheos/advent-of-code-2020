@@ -6,6 +6,7 @@
 #define DAY3_H
 
 void trees1();
+
 void trees2();
 
 #endif //DAY3_H

@@ -6,6 +6,7 @@
 #define DAY1_H
 
 void expenses1();
+
 void expenses2();
 
 #endif //DAY1_H

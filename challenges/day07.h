@@ -6,6 +6,7 @@
 #define DAY7_H
 
 void luggage1();
+
 void luggage2();
 
 #endif //DAY7_H

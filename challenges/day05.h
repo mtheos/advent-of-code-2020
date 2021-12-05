@@ -6,6 +6,7 @@
 #define DAY5_H
 
 void boarding1();
+
 void boarding2();
 
 #endif //DAY5_H

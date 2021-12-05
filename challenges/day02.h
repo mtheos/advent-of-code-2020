@@ -6,6 +6,7 @@
 #define DAY2_H
 
 void passwords1();
+
 void passwords2();
 
 #endif //DAY2_H

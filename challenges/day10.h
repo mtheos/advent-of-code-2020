@@ -6,6 +6,7 @@
 #define DAY10_H
 
 void jolting1();
+
 void jolting2();
 
 #endif //DAY10_H

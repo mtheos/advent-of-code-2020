@@ -6,6 +6,7 @@
 #define DAY8_H
 
 void bootCode1();
+
 void bootCode2();
 
 #endif //DAY8_H

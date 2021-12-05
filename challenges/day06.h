@@ -6,6 +6,7 @@
 #define DAY6_H
 
 void customs1();
+
 void customs2();
 
 #endif //DAY6_H

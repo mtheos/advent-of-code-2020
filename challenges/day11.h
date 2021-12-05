@@ -6,6 +6,7 @@
 #define DAY11_H
 
 void seating1();
+
 void seating2();
 
 #endif //DAY11_H

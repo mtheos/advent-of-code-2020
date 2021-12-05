@@ -6,6 +6,7 @@
 #define DAY12_H
 
 void evasion1();
+
 void evasion2();
 
 #endif //DAY12_H

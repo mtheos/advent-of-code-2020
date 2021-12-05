@@ -6,6 +6,7 @@
 #define DAY4_H
 
 void passports1();
+
 void passports2();
 
 #endif //DAY4_H

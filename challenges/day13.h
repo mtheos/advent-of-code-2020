@@ -6,6 +6,7 @@
 #define DAY13_H
 
 void shuttleBus1();
+
 void shuttleBus2();
 
 #endif //DAY13_H
